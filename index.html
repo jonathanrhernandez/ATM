@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./atm.jpg" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Cajero Automático</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/dexie@3/dist/dexie.min.js"></script>
+    <script src="./scripts.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-3">
+        <div class="col-12 text-center">
+          <h1>Cajero Automático</h1>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-6 offset-lg-3">
+          <!-- Cuadro grande que representa la pantalla del cajero -->
+          <div class="card main" id="pantalla">
+            <div class="card-body">
+              <h5 class="card-title text-center bienvenido">
+                Bienvenido a tu banco
+              </h5>
+              <p class="card-text text-center ingresa-tarjeta">
+                Por favor, ingresa tu tarjeta
+              </p>
+              <img src="./atm.jpg" class="rounded mx-auto d-block" alt="..." />
+            </div>
+          </div>
+          <div class="card main" id="error">
+            <div class="card-body">
+              <h5 class="card-title text-center bienvenido">
+                Bienvenido a tu banco
+              </h5>
+              <p class="card-text text-center ingresa-tarjeta">
+                Tarjetahabiente no encontrado por favor intenta de nuevo
+              </p>
+              <img
+                src="./error.jpg"
+                class="rounded mx-auto d-block"
+                alt="..."
+              />
+            </div>
+          </div>
+          <div class="card main" id="nip">
+            <div class="card-body">
+              <h5 class="card-title text-center bienvenido" id="lblnip"></h5>
+              <div
+                id="nipInput"
+                class="form-control mx-auto"
+                style="pointer-events: none"
+              ></div>
+            </div>
+          </div>
+
+          <div class="card main" id="mainMenu">
+            <div class="card-body">
+              <h5 class="card-title text-center bienvenido">¿Qué deseas realizar?</h5>
+              <div class="row mb-5 mt-5">
+                <div class="col-3">
+                  <button class="btn btn-primary btn-block btn-fixed-width">Consultar saldo</button>
+                </div>
+                <div class="col-3 offset-6">
+                  <button class="btn btn-primary btn-block btn-fixed-width">Cambiar NIP</button>
+                </div>
+              </div>
+              <div class="row mb-5 mt-5"></div>
+              <div class="row mt-5">
+                <div class="col-3">
+                  <button class="btn btn-primary btn-block btn-fixed-width">Retirar saldo</button>
+                </div>
+                <div class="col-3 offset-6">
+                  <button class="btn btn-primary btn-block btn-fixed-width">Depositar saldo</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-7">
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <button type="button" class="btn btn-primary" id="btn1">
+                        1
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn2">
+                        2
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn3">
+                        3
+                      </button>
+                      <button type="button" class="btn btn-danger">
+                        CANCELAR
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <button type="button" class="btn btn-primary" id="btn4">
+                        4
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn5">
+                        5
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn6">
+                        6
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <button type="button" class="btn btn-primary" id="btn7">
+                        7
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn8">
+                        8
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn9">
+                        9
+                      </button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12 mb-3">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        title="Cancelar"
+                        id="btnx"
+                      >
+                        X
+                      </button>
+                      <button type="button" class="btn btn-primary" id="btn0">
+                        0
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        title="Borrar"
+                        id="btnDel"
+                      >
+                        <
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-success"
+                        id="aceptar"
+                      >
+                        &nbsp;ACEPTAR&nbsp;&nbsp;
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Agrega más botones según sea necesario -->
+                </div>
+                <div class="col-5">
+                  <img src="./card.jpg" class="img-thumbnail" alt="..." />
+                  <input
+                    type="text"
+                    id="cardNumberInput"
+                    maxlength="19"
+                    placeholder="Ingrese el número de tarjeta"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
