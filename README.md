@@ -47,4 +47,4 @@ Como regla de negocio, una cuenta no debe de tener más de $990 y menos de $10. 
 - Dar click en la opción deseada, si es de retirar o depositar, solo se podrá usar el teclado azul para ingresar los montos, y dar click en aceptar
 - Despues de intentar o realizar algúna transacción, el sistema preguntara si se desea realizar algún otro movimiento. Si se da click en el botón aceptar que aparece en la pantalla principal, serás dirigido de nuevo al menù de opciones, si das cancelar se te presentarà una pantalla agradeciedno tu preferencia y despues de 3 segundos se liberara la tarjeta para poder iniciar de nuevo
 
-**Nota: ** Recuerda que al retirar no puedes quedarte con un saldo menor a $ 10.00 y al depositar no puedes tener un monto mayor a $ 990.00
+__Nota:__  Recuerda que al retirar no puedes quedarte con un saldo menor a $ 10.00 y al depositar no puedes tener un monto mayor a $ 990.00
