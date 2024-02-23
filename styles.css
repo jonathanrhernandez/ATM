@@ -6,7 +6,7 @@
     color: #666; 
   }
 
-  #error, #nip, #mainMenu{
+  #error, #nip, #mainMenu, #saldoScreen, #graciasScreen,#retirarSaldoScreen,#depositarSaldoScreen, #otraTransaccionRetiro,#otraTransaccionDeposito{
     display: none;
   }
 .main{

@@ -73,23 +73,102 @@
               <h5 class="card-title text-center bienvenido">¿Qué deseas realizar?</h5>
               <div class="row mb-5 mt-5">
                 <div class="col-3">
-                  <button class="btn btn-primary btn-block btn-fixed-width">Consultar saldo</button>
+                  <button class="btn btn-primary btn-block btn-fixed-width" id="consultarSaldo">Consultar saldo</button>
                 </div>
-                <div class="col-3 offset-6">
-                  <button class="btn btn-primary btn-block btn-fixed-width">Cambiar NIP</button>
-                </div>
+                <!-- <div class="col-3 offset-6">
+                  <button class="btn btn-primary btn-block btn-fixed-width" id="cambiarNip">Cambiar NIP</button>
+                </div> -->
               </div>
               <div class="row mb-5 mt-5"></div>
               <div class="row mt-5">
                 <div class="col-3">
-                  <button class="btn btn-primary btn-block btn-fixed-width">Retirar saldo</button>
+                  <button class="btn btn-primary btn-block btn-fixed-width" id="retirarSaldo">Retirar saldo</button>
                 </div>
                 <div class="col-3 offset-6">
-                  <button class="btn btn-primary btn-block btn-fixed-width">Depositar saldo</button>
+                  <button class="btn btn-primary btn-block btn-fixed-width" id="depositarSaldo">Depositar saldo</button>
                 </div>
               </div>
             </div>
           </div>
+
+          <div class="card main" id="saldoScreen">
+            <div class="card-body">
+              <h5 class="card-title text-center bienvenido">Tu saldo es:</h5>
+              <div class="text-center mb-3 display-4 text-primary fw-bold" id="saldoAmount"></div>
+              <p class="text-center">¿Deseas realizar otra transacción?</p>
+              <div class="row mb-5 mt-5">
+                <div class="col-6">
+                  <button class="btn btn-primary btn-block btn-fixed-width" id="aceptarTransaccion">Aceptar</button>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-primary btn-block btn-fixed-width" id="cancelarTransaccion">Cancelar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card main" id="retirarSaldoScreen">
+            <div class="card-body">
+                <h5 class="card-title text-center bienvenido">Ingresa el monto a retirar</h5>
+                <p class="text-center">Despues presiona el botón de Aceptar</p>
+                <div class="row mb-2 mt-5">
+                    <div class="col-8 mx-auto">
+                        <input type="text" class="form-control" id="montoRetiroInput" placeholder="Monto a retirar" readonly>
+                    </div>
+                </div>                        
+                <p class="text-center text-danger fw-bold" id="inforetirarMonto"></p>
+                <div class="row mt-1" id="otraTransaccionRetiro">
+                  <p class="text-center">¿Deseas realizar otra transacción?</p>
+                  <div class="row mb-5 mt-2">
+                    <div class="col-6">
+                      <button class="btn btn-primary btn-block btn-fixed-width" id="aceptarTransaccionRetiro">Aceptar</button>
+                    </div>
+                    <div class="col-6">
+                      <button class="btn btn-primary btn-block btn-fixed-width" id="cancelarTransaccionRetiro">Cancelar</button>
+                    </div>
+                  </div>  
+                </div>
+                  
+            </div>
+        </div>
+
+        <div class="card main" id="depositarSaldoScreen">
+          <div class="card-body">
+              <h5 class="card-title text-center bienvenido">Ingresa el monto a depositar</h5>
+              <p class="text-center">Despues presiona el botón de Aceptar</p>
+              <div class="row mb-3 mt-3">
+                  <div class="col-8 mx-auto">
+                      <input type="text" class="form-control" id="montoDepositoInput" placeholder="Monto a depositar" readonly>
+                  </div>
+              </div>   
+              <p class="text-center text-danger fw-bold" id="infoDepositarMonto"></p>
+              <div class="row mt-1" id="otraTransaccionDeposito">
+                <p class="text-center">¿Deseas realizar otra transacción?</p>
+                <div class="row mb-5 mt-2">
+                  <div class="col-6">
+                    <button class="btn btn-primary btn-block btn-fixed-width" id="aceptarTransaccionDeposito">Aceptar</button>
+                  </div>
+                  <div class="col-6">
+                    <button class="btn btn-primary btn-block btn-fixed-width" id="cancelarTransaccionDeposito">Cancelar</button>
+                  </div>
+                </div>  
+              </div>           
+          </div>
+      </div>
+        
+
+          <div class="card main" id="graciasScreen">
+            <div class="card-body">
+              <h5 class="card-title text-center bienvenido">¡Gracias por usar mi banco!</h5>
+              <p class="text-center">Vuelve pronto</p>
+              <img
+              src="./bank.jpg"
+              class="rounded mx-auto d-block"
+              alt="..."
+            />
+            </div>
+          </div>
+          
 
         </div>
       </div>
@@ -110,7 +189,7 @@
                       <button type="button" class="btn btn-primary" id="btn3">
                         3
                       </button>
-                      <button type="button" class="btn btn-danger">
+                      <button type="button" class="btn btn-danger" id="salir">
                         CANCELAR
                       </button>
                     </div>
